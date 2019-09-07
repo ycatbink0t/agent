@@ -22,6 +22,7 @@ socket.on('disconnect', () => {
 socket.on('connect_error', (err: any) => {
     console.log(err);
     setTimeout(() => {
+        socket.disconnect();
         socket.open();
     }, 2000);
 });
